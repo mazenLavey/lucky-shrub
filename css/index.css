@@ -546,14 +546,13 @@ button:hover {
 
 .pojects__gallery > i {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 5rem;
+    opacity: 0.5;
+    font-size: 2rem;
+    bottom: 20px;
+    right: 10px;
     color: white;
     filter: drop-shadow(2px 4px 6px black);
     z-index: 1;
-    opacity: 0;
     transition: inherit;
     pointer-events: none;
 }
@@ -572,7 +571,7 @@ button:hover {
 }
 
 .pojects__gallery:hover > i {
-    opacity: 1;
+    opacity: 0.9;
 }
 
 .pojects__gallery:hover > img {
@@ -779,7 +778,8 @@ button:hover {
 @media (max-width: 767px) {
     .contact {
         grid-template-columns: unset;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        gap: 0;
     }
 }
 /* end contact us */
@@ -1045,7 +1045,7 @@ button:hover {
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .popup.active {
