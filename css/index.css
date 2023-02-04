@@ -548,7 +548,7 @@ button:hover {
     position: absolute;
     opacity: 0.5;
     font-size: 2rem;
-    bottom: 20px;
+    top: 20px;
     right: 10px;
     color: white;
     filter: drop-shadow(2px 4px 6px black);
