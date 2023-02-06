@@ -2,9 +2,9 @@
 
 Open site via this link: https://mazenlavey.github.io/lucky-shrub/
 
-This project was one of my assignments for the Meta Front-End Developer Professional Certification on coursera. The goal of the project was to use what I had learned in HTML and CSS through the course.
+This project was one of my assignments for the Meta Front-End Developer Professional Certification on Coursera. The goal of the project was to use what I had learned in HTML and CSS through the course.
 
-This website is a simulation for any possible small business website, which shows a brief about the owners, the services provided, projects, and a way to contact them.
+This website is a template for any possible small business website, which shows a brief about the owners, the services provided, projects, and a way to contact them.
 
 The website is fully responsive.
 
