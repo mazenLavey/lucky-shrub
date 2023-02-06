@@ -417,7 +417,7 @@ button:hover {
         height: 270px;
     }
 }
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
     .m-bars {
         display: block;
     }
