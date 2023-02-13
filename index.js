@@ -1,5 +1,73 @@
+// render projects
 
+let projectsGrid = document.querySelector('.projects__grid');
 
+let projecList = fetch("projects.json").then(res => res.json()).then((data) => {
+    data.forEach((project)=>{
+        return (
+            projectsGrid.insertAdjacentHTML("beforeend", 
+            `<div class="pojects__gallery">
+            <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i>
+            <img src=${project.img.src} alt=${project.img.alt} width=${project.img.width} height=${project.img.height} loading=${project.img.loading} id=${project.id}>
+            </div>`
+            )
+        );
+    })
+})
+
+// popup 
+
+let popup = document.getElementsByClassName('popup')[0];
+
+function createPopup(projectId) {
+    fetch("projects.json").then(res => res.json()).then( (data) => {
+        const popupDiv = document.createElement('div');
+        popupDiv.classList.add('popup');
+        popupDiv.classList.add('active');
+        popupDiv.innerHTML = `
+        <div class="popup__bg"></div>
+        <div class="popup__box">
+            <i class="fa-solid fa-circle-xmark" id="popup_close" aria-hidden="true"></i>
+            <h2>${data[projectId].name}</h2>
+            <div class="popup__box__content">
+                <img src=${data[projectId].img.src} alt=${data[projectId].img.alt}>
+                <div>
+                    <p>${data[projectId].description}</p>
+                    <div class="info">    
+                        <p>${data[projectId].period}</p>
+                        <span>${data[projectId].cost}<span/>
+                    <div>
+                <div/>
+            </div>
+        </div>
+        `
+        document.body.appendChild(popupDiv);
+        // closing function
+        let popupClose = document.getElementById('popup_close');
+        let popupBg = document.getElementsByClassName('popup__bg')[0];
+        popupClose.addEventListener('click', (e)=>{
+            e.target.parentElement.parentElement.remove();
+            
+        })
+
+        popupBg.addEventListener('click', (e)=>{
+            e.target.parentElement.remove();
+        })
+    })
+    
+
+}
+
+projecList.finally( ()=>{
+    let pojectsGallery = document.querySelectorAll('.pojects__gallery');
+
+    pojectsGallery.forEach(element => {
+        element.addEventListener('click', (e)=>{
+            createPopup(e.target.id);
+        })
+    });
+    }
+);
 
 
 // button scroll to top:
@@ -87,119 +155,17 @@ const light = ()=>{
     document.documentElement.style.setProperty('--faded-bg', '#0000004d');
 }
 
-// popup 
-
-const popup = document.getElementsByClassName('popup')[0];
-const pojectsGallery = Array.from(document.querySelectorAll('.pojects__gallery'));
-
-function createPopup(src, alt, info, cost) {
-    
-    const popupDiv = document.createElement('div');
-
-    popupDiv.classList.add('popup');
-    popupDiv.classList.add('active');
-    popupDiv.innerHTML = `
-    <div class="popup__bg"></div>
-    <div class="popup__box">
-        <i class="fa-solid fa-circle-xmark" id="popup_close"></i>
-        <h2>${alt}</h2>
-        <div class="popup__box__content">
-            <img src=${src} alt=${alt}>
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias illo repudiandae expedita unde rerum cupiditate odit, quo maxime earum, eos veritatis! Eaque doloremque assumenda natus fugiat maxime dignissimos neque perspiciatis.</p>
-                <div class="info">    
-                    <p>${info}</p>
-                    <span>${cost}<span/>
-                <div>
-            <div/>
-        </div>
-    </div>
-    `
-
-    document.body.appendChild(popupDiv);
-
-}
-
-pojectsGallery.forEach(element => {
-    element.addEventListener('click', (e)=>{
-        createPopup(e.target.src, e.target.alt, e.target.dataset.info, e.target.dataset.cost);
-
-        const popupClose = document.getElementById('popup_close');
-        const popupBg = document.getElementsByClassName('popup__bg')[0];
-
-        popupClose.addEventListener('click', (e)=>{
-            e.target.parentElement.parentElement.remove();
-            
-        })
-
-        popupBg.addEventListener('click', (e)=>{
-            e.target.parentElement.remove();
-        })
-    })
-});
-
 // multi Language settings
 
-const translation = {
-    en: {
-        'logo': 'Logo',
-        'about': 'About',
-        'projects': 'Projects',
-        'services': 'Services',
-        'contact': 'Contact',
-        'title': 'SPRING<br><span>of</span> FLOWERS',
-        'description': 'Let Your Lawn<br>come to life!',
-        'more': 'More',
-        'about-paragraph': "<span style='color: #227721; font-weight: bold;'>Lucky Shrub</span> was started by a husband and wife team, Jason and Maria, who share a long-time love for plants. Jason is the garden architect. He creates and oversees all designs while managing his team of landscapers. Maria manages all the marketing for the company and oversees the nursery. <br><br> We have always tried to offer perfect outdoor maintenance and great customer service. As we work with some of the leading gardening experts in the Britch!!, we have managed to develop a reputation that is worth bragging with. All gardening teams are well-trained and equipped with everthing that's needed for perfect garden care.",
-        'call-to-action': 'Lucky Shrub provides you with <br>a free consultation on gardening',
-        'call-to-action-btn': 'get free estimate',
-        'our-projects': 'Our projects',
-        'our-services': 'Our services',
-        'our-services-paragraph': 'We carry out such services and approach to lawn and garden care to keep your lush green lawn and garden',
-        'landscape-design': 'landscape design',
-        'installation':'installation',
-        'tree-trimming':'tree trimming',
-        'maintenance':'maintenance',
-        'contact-paragraph': 'Have a question or want to get in touch? <br>Leave your details, we will contact you.',
-        'submit': 'submit now',
-        'logo-paragraph': 'design. transform. enjoy',
-        'address': 'Contact Address',
-        'links': 'Quick links',
-        'mode': 'Dark Mode',
-        'off': 'Off',
-        'on': 'On',
-        'language': 'Language',
-    },
-    ru: {
-        'logo': 'Логотип',
-        'about': 'О нас',
-        'projects': 'Проекты',
-        'services': 'Услуги',
-        'contact': 'Контакт',
-        'title': 'ВЕСНА<br>ЦВЕТОВ',
-        'description': 'Пусть Ваш газон<br>оживает!',
-        'more': 'Еще',
-        'about-paragraph': "<span style='color: #227721; font-weight: bold;'>Lucky Shrub</span> была основана супружеской парой, Джейсоном и Марией, которых объединяет давняя любовь к растениям. Джейсон - садовый архитектор. Он создает и контролирует все проекты, управляя своей командой ландшафтных дизайнеров. Мария отвечает за весь маркетинг компании и курирует садом. <br><br> Мы всегда старались предложить идеальную техническую поддержку участков и отличное обслуживание клиентов. Поскольку мы работаем с некоторыми из ведущих специалистов по садоводству в Britch!!, нам удалось завоевать репутацию, которой стоит похвастаться. Все бригады садоводов хорошо обучены и оснащены всем необходимым для идеального ухода за садом.",
-        'call-to-action': 'Lucky Shrub предоставляет вам <br>бесплатную консультацию по садоводству.',
-        'call-to-action-btn': 'получить бесплатный расчет',
-        'our-projects': 'Наши проекты',
-        'our-services': 'Наши сервисы',
-        'our-services-paragraph': 'Мы осуществляем следующие услуги и подходы к уходу за газоном и садом, чтобы сохранить ваш пышный зеленый газон и сад',
-        'landscape-design': 'ландшафтный дизайн',
-        'installation':'установка',
-        'tree-trimming':'обрезка деревьев',
-        'maintenance':'поддержание',
-        'contact-paragraph': 'Есть вопрос или хотите связаться? <br>Оставьте свои данные, мы свяжемся с вами.',
-        'submit': 'отправить сейчас',
-        'logo-paragraph': 'проектируйте. трансформируйте. наслаждайтесь',
-        'address': 'Контактный адрес',
-        'links': 'Ссылки',
-        'mode': 'Темный режим',
-        'off': 'Выкл.',
-        'on': 'Вкл.',
-        'language': 'Язык',
-    }
-}
+
+let translation;
+
+fetch('translation.json')
+    .then(res => res.json())
+    .then(data => {
+        translation = data
+    });
+
 
 const language = document.querySelectorAll('.language');
 const content = document.querySelectorAll('[data-multilang]');
@@ -214,7 +180,7 @@ language.forEach((element)=>{
     });
 });
 
-const changeTranslation = (choosedLang, langBtn)=>{
+const changeTranslation = (choosedLang)=>{
     if (choosedLang === 'ru') {
         window.localStorage.setItem('language', 'ru');
         content.forEach((element)=>{
@@ -229,6 +195,8 @@ const changeTranslation = (choosedLang, langBtn)=>{
     }
 }
 
+
+
 // check on load
 
 window.onload = ()=>{
@@ -242,8 +210,8 @@ window.onload = ()=>{
     }
 
     // check page mode
-   if (window.localStorage.getItem('darkMode') === 'true') {
-    darkModeBtn.checked = true;
-    dark();
-   };
+    if (window.localStorage.getItem('darkMode') === 'true') {
+        darkModeBtn.checked = true;
+        dark();
+    };
 }

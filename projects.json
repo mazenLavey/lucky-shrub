@@ -1,0 +1,102 @@
+[
+    {
+        "id": 0,
+        "name": "Project No.1",
+        "period": "6 month",
+        "cost": "3000$",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae eos, cumque facilis explicabo itaque libero iste iusto vitae quod pariatur nam modi ipsum, accusamus, aliquam corrupti doloremque nobis? Reprehenderit, consequuntur.",
+        "img": {
+            "src": "images/project01.webp",
+            "alt": "project name",
+            "width": "900",
+            "height": "600",
+            "loading": "lazy"
+        } 
+    },
+    {
+        "id": 1,
+        "name": "Project No.2",
+        "period": "3 month",
+        "cost": "2000$",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae eos, cumque facilis explicabo itaque libero iste iusto vitae quod pariatur nam modi ipsum, accusamus, aliquam corrupti doloremque nobis? Reprehenderit, consequuntur.",
+        "img": {
+            "src": "images/project02.webp",
+            "alt": "project name",
+            "width": "900",
+            "height": "600",
+            "loading": "lazy"
+        } 
+    },
+    {
+        "id": 2,
+        "name": "Project No.3",
+        "period": "4 month",
+        "cost": "25000$",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae eos, cumque facilis explicabo itaque libero iste iusto vitae quod pariatur nam modi ipsum, accusamus, aliquam corrupti doloremque nobis? Reprehenderit, consequuntur.",
+        "img": {
+            "src": "images/project03.webp",
+            "alt": "project name",
+            "width": "900",
+            "height": "600",
+            "loading": "lazy"
+        } 
+    },
+    {
+        "id": 3,
+        "name": "Project No.4",
+        "period": "8 month",
+        "cost": "6000$",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae eos, cumque facilis explicabo itaque libero iste iusto vitae quod pariatur nam modi ipsum, accusamus, aliquam corrupti doloremque nobis? Reprehenderit, consequuntur.",
+        "img": {
+            "src": "images/project04.webp",
+            "alt": "project name",
+            "width": "900",
+            "height": "600",
+            "loading": "lazy"
+        } 
+    },
+    {
+        "id": 4,
+        "name": "Project No.5",
+        "period": "1 month",
+        "cost": "800$",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae eos, cumque facilis explicabo itaque libero iste iusto vitae quod pariatur nam modi ipsum, accusamus, aliquam corrupti doloremque nobis? Reprehenderit, consequuntur.",
+        "img": {
+            "src": "images/project05.webp",
+            "alt": "project name",
+            "width": "900",
+            "height": "600",
+            "loading": "lazy"
+        } 
+    },
+    {
+        "id": 5,
+        "name": "Project No.6",
+        "period": "5 month",
+        "cost": "3500$",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae eos, cumque facilis explicabo itaque libero iste iusto vitae quod pariatur nam modi ipsum, accusamus, aliquam corrupti doloremque nobis? Reprehenderit, consequuntur.",
+        "img": {
+            "src": "images/project06.webp",
+            "alt": "project name",
+            "width": "900",
+            "height": "600",
+            "loading": "lazy"
+        } 
+    },
+    {
+        "id": 6,
+        "name": "Project No.7",
+        "period": "3 month",
+        "cost": "8500$",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae eos, cumque facilis explicabo itaque libero iste iusto vitae quod pariatur nam modi ipsum, accusamus, aliquam corrupti doloremque nobis? Reprehenderit, consequuntur.",
+        "img": {
+            "src": "images/project07.webp",
+            "alt": "project name",
+            "width": "900",
+            "height": "600",
+            "loading": "lazy"
+        } 
+    }
+
+]
+
