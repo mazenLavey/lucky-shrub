@@ -1,6 +1,6 @@
 # Lucky Shrub
 
-Open site via this link: https://mazenlavey.github.io/lucky-shrub/
+## live demo: https://mazenlavey.github.io/lucky-shrub/
 
 This project was one of my assignments for the Meta Front-End Developer Professional Certification on Coursera. The goal of the project was to use what I had learned in HTML and CSS through the course.
 
@@ -10,6 +10,3 @@ The website is fully responsive.
 
 ![lucky_shrub](https://user-images.githubusercontent.com/122162390/217041953-a4398304-1925-4afd-8316-8a0b0d4247e9.jpg)
 
-# Lighthouse Report
-
-![lucky_shrub_sccore](https://user-images.githubusercontent.com/122162390/217041931-80c54c13-729e-43f0-a15f-23e3a1f8ff75.jpg)
